@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body{
+    background-color: rgb(165, 88, 101);   
+}
+h2{
+    color:rgb(13, 53, 13);
+    font-weight:700;
+
+}
+h3{
+font-style: italic;
+
+}
+a{
+    color: rgb(13, 53, 13);
+    text-decoration-color: green;
+}
+
+a:hover{
+    color: red;
+}
+.borderdiv
+{
+    display: block;
+border-bottom: 3px thin rgb(7, 61, 43);
+}
+#favorite
+{
+
+    width: 50%;
+    border: 5px solid green;
+}
+#childhood
+{
+    display:block;
+border-top: 3px thin green;
+border-bottom: 3px thin green;
+
+}

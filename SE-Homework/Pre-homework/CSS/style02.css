@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body{
+    position: relative;
+    background-color: rgb(165, 88, 101);   
+}
+header{
+    position:fixed;
+    background-color:seashell ;
+}
+h2{
+    color:rgb(13, 53, 13);
+    font-weight:700;
+
+}
+h3{
+    color:rgb(5, 75, 52);
+font-style: italic;
+text-transform: capitalize;
+
+}
+a{
+    color: rgb(13, 53, 13);
+    text-decoration-color: green;
+}
+
+a:hover{
+    color: purple;
+}
+div
+
+{
+    display: block;
+border-bottom: 10px thin rgb(7, 61, 43);
+text-indent: 12pt;
+}
+#favorite
+{
+    display: block;
+border: 5px thin green;
+
+}
+
