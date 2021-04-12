@@ -1,0 +1,72 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--This program both removes and changes the color of circles obscuring a background image
+        picture-->
+    <script >
+        let color = ["red", "yellow", "orange", "blue"];
+        let nextColor= 0;
+
+        
+        function changeColor(){
+            let outerDiv = document.getElementById("grid");
+            let oval = outerDiv.getElementsByTagName("div");
+            for(i=0; i< oval.length; i++){
+                oval[i].style.backgroundColor=color[nextColor];
+            }
+            if (nextColor< color.length-1){
+                nextColor +=1;
+            }
+            else{
+                nextColor = 0;
+            }
+        }
+
+    </script>
+<style>
+    .grid{
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     grid-template-rows: 1fr 1fr 1fr;
+     background-image:url("https://th.bing.com/th/id/OIP.kpu2m0oX4xIXvO-RZnCvkQHaE8?w=233&h=180&c=7&o=5&pid=1.7");
+     background-size: cover;
+     width: 100vw;
+     height: 100vh;
+    font-size: 100px;
+
+    }
+
+    .grid_item{
+        border: 2px solid black;
+        border-radius: 50%;
+        background-color: rgb(250, 99, 205);
+    }
+
+    .grid_item:hover{
+        opacity: 0;
+
+    }
+ 
+</style>
+
+</head>
+<body>
+
+
+
+    <div class="grid" id="grid" onclick="changeColor()">
+        <div class="grid_item" id="1"></div>
+        <div class="grid_item" id="2"></div>
+        <div class="grid_item" id="3"></div>
+        <div class="grid_item" id="4"></div>
+        <div class="grid_item" id="5"></div>
+        <div class="grid_item" id="6"></div>
+        <div class="grid_item" id="7"></div>
+        <div class="grid_item" id="8"></div>
+        <div class="grid_item" id="9"></div>
+    </div>
+
+</body>
+</html>

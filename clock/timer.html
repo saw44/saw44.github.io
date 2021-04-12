@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+
+            }
+            .face{
+                display: grid;
+                position: relative;
+                grid-template-columns: 190px 110px 190px;
+                grid-template-rows:225px 50px 225px;
+                width: 500px;
+                height: 500px;
+                border-radius: 50%;
+                transform:translateX(300px);
+            }
+            .blue{
+                background-color:blueviolet;
+            }
+            .red{
+                background-color: red;
+            }
+
+            .box {
+                position: absolute;
+                grid-row-start: 2;
+                grid-column-start: 2;
+                display: grid;
+                grid-template-columns: 60px 50px;
+                grid-template-rows: 50px;
+                font-size: 40px;
+                border-right: 2px solid black;
+                border-left : 2px solid black;
+                border-top: 2px solid black;
+                border-bottom: 2px solid black;
+
+            }
+           
+       
+            .editable-in-place {
+    margin:auto;
+    position:relative;
+    width: 400px;
+    height: 200px;
+    font-size:36px;
+    font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+    background-color:#048ED2;
+}
+
+.editable-in-place input {
+    box-sizing: border-box;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: #2A9AD2;
+    border:none;
+    padding:0;
+    margin:0;
+}
+
+.editable-in-place .inside{
+    position:absolute;
+    margin: 0;
+    padding: 0;
+    text-align:center;
+    width:400px;
+    left:0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hide {
+    visibility:hidden;
+}
+</style>
+
+        <script>
+            window.addEventListener('DOMContentLoaded', documentLoaded);
+
+function documentLoaded() {
+    document.getElementsByClassName("editable-in-place")[0].addEventListener("click", clicked);
+}
+
+function clicked(evt) {
+  
+    var input = this.querySelector("input");
+    var label = this.querySelector("div");
+
+    if (evt.target === input) {
+   
+
+    } else if (evt.target === label) {
+      
+        input.classList.remove("hide");
+
+       
+        label.classList.add("hide");
+
+       
+        input.value = label.innerHTML;
+
+        input.addKeyboardEvent("keydown", function keydown(evt) {
+
+    
+            if (evt.keyCode === 13) {
+                label.innerHTML = input.value;
+                label.classList.remove("hide");
+                input.classList.add("hide");
+                input.removeKeyboardEvent("keydown", keydown);
+            }
+
+        });
+        input.focus();
+    } else {
+        input.classList.add("hide");
+
+        label.classList.remove("hide");
+    }
+
+}
+        var startTime;
+        var end;
+        var timer;
+
+        function documentLoaded() { "use strict";
+        document.getElementById("btnStart").addEventListener("click", buttonClicked, false);
+        console.log("Documento carregado");
+        }
+        function buttonClicked() {
+            "use strict";
+            startTime = new Date();
+            endTime = parseInt(document.getElementById("txtTempo").value);
+            clearInterval(timer);
+            time = setInterval(updateTime, 1000);
+        }function updateTime() {
+            "use strict";
+            let currentTime = new Date();
+            let elapsed = (currentTime.getTime() - startTime.getTime()) / 1000;
+            let minutes = Math.floor(elapsed / 60);
+            let seconds = Math.floor(elapsed % 60);
+        }
+
+  if (minutes < 10) {
+    minutes = 0 + minutes;
+  }
+  if (seconds < 10) {
+    seconds = 0 + seconds;
+  }
+
+  document.getElementById("clock").innerHTML = minutes + ":" + seconds;
+
+  if (minutes >= end) {
+    document.getElementById("clock").className = "red";
+  } else {
+    document.getElementById("clock").className = "blue";
+  }
+
+</script>           
+           
+    </head>
+    <body>
+    
+  
+
+        <div id="control">
+            <input class="inside" id="txtTempo" type="text" value="10" size="4" maxlength="4">
+             
+            <button id="btnStart">Start</button>
+          </div>
+        <div class="face blue" id="clock">
+            <div class="box" contenteditable="true">  
+              <input class="editable-in-place inside hide" value="click to edit me" size="15" max="20">
+              </div>
+            </div>
+
+
+        </div>  
+          
+    </body>
+</html>
