@@ -1,73 +1,17 @@
 /*
-
+Parts of the poem not incorporated
 There was an old lady who swallowed a fly
 I don’t know why she swallowed a fly – Perhaps she’ll die!
 
-There was an old lady who swallowed a spider
-That wriggled and jiggled and tickled inside her!
-She swallowed the spider to catch the fly;
-I don’t know why she swallowed a fly – Perhaps she’ll die!
-
-There was an old lady who swallowed a bird;
-How absurd to swallow a bird!
-She swallowed the bird to catch the spider
-That wriggled and jiggled and tickled inside her!
-She swallowed the spider to catch the fly;
-I don’t know why she swallowed a fly – Perhaps she’ll die!
-
-There was an old lady who swallowed a cat;
-Fancy that! She swallowed a cat!
-She swallowed the cat to catch the bird,
-She swallowed the bird to catch the spider
-That wriggled and jiggled and tickled inside her!
-She swallowed the spider to catch the fly;
-I don’t know why she swallowed a fly – Perhaps she’ll die!
-
-There was an old lady that swallowed a dog;
-What a hog, to swallow a dog!
-She swallowed the dog to catch the cat,
-She swallowed the cat to catch the bird,
-She swallowed the bird to catch the spider
-That wriggled and jiggled and tickled inside her!
-She swallowed the spider to catch the fly;
-I don’t know why she swallowed a fly – Perhaps she’ll die!
-
-There was an old lady who swallowed a goat;
-She just opened her throat and swallowed a goat!
-She swallowed the goat to catch the dog,
-She swallowed the dog to catch the cat,
-She swallowed the cat to catch the bird,
-She swallowed the bird to catch the spider
-That wriggled and jiggled and tickled inside her!
-She swallowed the spider to catch the fly;
-I don’t know why she swallowed a fly – Perhaps she’ll die!
-
-There was an old lady who swallowed a cow;
-I don’t know how she swallowed a cow!
-She swallowed the cow to catch the goat,
-She swallowed the goat to catch the dog,
-She swallowed the dog to catch the cat,
-She swallowed the cat to catch the bird,
-She swallowed the bird to catch the spider
-That wriggled and jiggled and tickled inside her!
-She swallowed the spider to catch the fly;
-I don’t know why she swallowed a fly – Perhaps she’s dead
 There was an old lady who swallowed a horse;
-
 …She’s dead, of course!
 
-for(i = 1; i < animal.length-1; i++){
-        if(sent3.includes(animal[1]) && sent3.includes(animal[0])){
-            sent3 = sent3.replace(animal[1], animal[2]);
-            sent3.splice()
-            newSent3 = sent3.concat(sent2)
-          
-        }
-        console.log(newStanza = newSent1 + sent2 + newSent3 + sent4);
-    }
+Below is how I determined where to slice sent3.
     let pos = sent3.indexOf(`catch`);
           console.log(sent3.length);
       console.log(pos);
+      
+  
 */
 const animal = ["fly", "spider", "bird", "cat", "dog", "goat", "cow", "horse"];
 let i;
